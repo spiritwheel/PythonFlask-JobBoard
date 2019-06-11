@@ -3,6 +3,10 @@ from flask import Flask, render_template, g
 
 PATH = 'db/jobs.sqlite'
 
+def open_connection():
+    connection = getattr(g, '_connection',None)
+    
+
 app = Flask(__name__)
 
 @app.route('/')
